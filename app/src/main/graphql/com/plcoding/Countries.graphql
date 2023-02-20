@@ -1,8 +1,9 @@
 query Countries {
     countries {
         name
+        emoji
         capital
         code
-        emoji
     }
+
 }
