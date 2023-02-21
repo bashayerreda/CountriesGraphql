@@ -24,7 +24,9 @@ class MainActivity : ComponentActivity() {
             GraphQlCountriesAppTheme {
                 val viewModel = hiltViewModel<CountriesViewModel>()
                 val state by viewModel.stateOfCountries.collectAsState()
-                MainScreen(viewModelState = state, modifier = Modifier.fillMaxSize().padding(8.dp))
+                MainScreen(viewModelState = state, modifier = Modifier.fillMaxSize().padding(8.dp), onClickItem = viewModel::selectCountry, dismiss = { viewModel.dismissDialog()
+
+                })
             }
         }
     }
